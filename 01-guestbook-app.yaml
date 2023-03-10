@@ -11,4 +11,4 @@ spec:
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: kube-system
-  project: default
+  project: bluon-platform
