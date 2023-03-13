@@ -6,7 +6,7 @@ spec:
   destination:
     name: ''
     namespace: test
-    server: 'https://kubernetes.default.svc'
+    server: 'https://rancher.bluontoolbox.com/k8s/clusters/c-kqkxv'
   source:
     path: app-01
     repoURL: 'git@github.com:bionatus/test-app.git'
