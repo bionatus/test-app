@@ -1,13 +1,17 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: guestbook
-spec:
-  source:
-    path: app-01/
-    repoURL: https://github.com/bionatus/test-app
-    targetRevision: HEAD
-  destination:
-    server: 'https://kubernetes.default.svc'
-    namespace: kube-system
-  project: bluon-platform
+project: default
+source:
+  repoURL: 'git@github.com:bionatus/argocd-testing.git'
+  path: app-01/
+  targetRevision: dev
+  directory:
+    recurse: true
+    jsonnet: {}
+destination:
+  namespace: test
+  name: bluon-platform-dev
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
+  syncOptions:
+    - CreateNamespace=true
