@@ -1,0 +1,51 @@
+name: PR WorkFlow
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+      - demo
+      - uat
+      - qa
+      - staging
+      - 'rc-*'
+jobs:
+  app-tests:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0.26
+        env:
+          MYSQL_DATABASE: test
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: pass
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    steps:
+      - uses: actions/checkout@v1
+      - name: Copy .env
+        run: php -r "copy('.env.testing.github', '.env.testing');"
+      - name: Setup PHP
+        uses: shivammathur/setup-php@master
+        with:
+          php-version: 8.1
+          extensions: mbstring, bcmath, grpc
+      - name: add execution permisions
+        run: chmod +x .github/scripts/install-php-heic.sh
+      - name: install extension
+        run: sudo bash .github/scripts/install-php-heic.sh > /dev/null
+      - name: restart FPM
+        run: sudo service php8.1-fpm restart
+      - name: Install Composer Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+      - name: Generating jwt token
+        run: php artisan jwt:secret --force --env=testing
+      - name: Artisan clear
+        run: php artisan clear
+      - name: Clear cache config
+        run: php artisan config:clear
+      - name: Execute tests
+        run: php artisan test --env=testing

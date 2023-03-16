@@ -1,0 +1,162 @@
+{
+  "version": "2.5.0",
+  "products": [
+    {
+      "title": "Unit",
+      "data": [
+        {
+          "label": "Unit",
+          "component": "ProductItemBrand"
+        },
+        {
+          "label": "Unit Image",
+          "component": "ProductItemImage"
+        },
+        {
+          "label": "Conversion Stage",
+          "component": "ProductItemStage"
+        }
+      ]
+    },
+    {
+      "title": "Unit Details",
+      "data": [
+        "System Type",
+        "Tonnage",
+        "Total Circuits",
+        "DX\/Chiller",
+        "Cooling Type",
+        "AC\/HP",
+        "SEER",
+        "EER"
+      ]
+    },
+    {
+      "title": "Refrigerant Details",
+      "data": [
+        "Refrigerant",
+        "Original Charge (oz)"
+      ]
+    },
+    {
+      "title": "Compressor Details",
+      "data": [
+        "Compressor Type",
+        "Compressor Brand",
+        "Compressor Model",
+        "Total Compressors",
+        "Compressors\/Circuit",
+        "Compressor Size(s)",
+        "RLA",
+        "LRA",
+        {
+          "label": "Compressor Notes",
+          "component": "ProductItemNotes"
+        }
+      ]
+    },
+    {
+      "title": "Oil Details",
+      "data": [
+        "Oil Type",
+        "Oil Amt (oz)",
+        {
+          "label": "Oil Notes",
+          "component": "ProductItemNotes"
+        }
+      ]
+    },
+    {
+      "title": "Metering Device Details",
+      "data": [
+        "Device Type",
+        "Devices\/Circuit",
+        "Total Devices",
+        "Device Size",
+        "Device Brand",
+        "Device Model",
+        {
+          "label": "Metering Device Notes",
+          "component": "ProductItemNotes"
+        }
+      ]
+    },
+    {
+      "title": "Fan Details",
+      "data": [
+        "Fan Type",
+        "CFM Range",
+        {
+          "label": "Fan Notes",
+          "component": "ProductItemNotes"
+        }
+      ]
+    },
+    {
+      "title": "Electrical Details",
+      "data": [
+        "Voltage\/Phase\/Hz"
+      ]
+    },
+    {
+      "title": "System Concerns",
+      "data": [
+        {
+          "label": "System Concerns",
+          "component": "ProductItem",
+          "valueOnly": true
+        }
+      ]
+    },
+    {
+      "title": "Standard Controls",
+      "data": [
+        {
+          "label": "Standard Controls",
+          "component": "ProductItem",
+          "valueOnly": true
+        }
+      ]
+    },
+    {
+      "title": "Optional Controls",
+      "data": [
+        {
+          "label": "Optional Controls",
+          "component": "ProductItem",
+          "valueOnly": true
+        }
+      ]
+    },
+    {
+      "title": "Manual",
+      "data": [
+        {
+          "label": "Download Manual",
+          "component": "ProductItemManual"
+        }
+      ]
+    }
+  ],
+  "conversion": [
+    {
+      "title": "Other Conversion Notes",
+      "dataKey": "notes"
+    },
+    {
+      "title": "System Concerns",
+      "apiResponseKey": "standard",
+      "dataKey": "system"
+    },
+    {
+      "title": "Standard Controls",
+      "apiResponseKey": "standard",
+      "dataKey": "standard"
+    },
+    {
+      "title": "Optional Controls",
+      "apiResponseKey": "optional",
+      "dataKey": "optional"
+    }
+  ]
+}

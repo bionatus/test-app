@@ -1,0 +1,11 @@
+{
+    "code": "400",
+    "errorId": "PLE10001",
+    "errorInfo": "Validation error in place order.",
+    "error": [
+        {
+            "msg": "Mobile number is missing/Invalid",
+            "failure": true
+        }
+    ]
+}

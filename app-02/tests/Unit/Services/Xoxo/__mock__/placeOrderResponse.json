@@ -1,0 +1,33 @@
+{
+    "data": {
+        "placeOrder": {
+            "status": 1,
+            "data": {
+                "orderId": 6214194,
+                "orderTotal": 25,
+                "orderDiscount": "",
+                "discountPercent": "",
+                "currencyCode": "USD",
+                "currencyValue": 0.014089,
+                "amountCharged": 25,
+                "orderStatus": "complete",
+                "deliveryStatus": "delivered",
+                "tag": "",
+                "vouchers": [
+                    {
+                        "productId": 29877,
+                        "orderId": 6214194,
+                        "voucherCode": "DEMO-1623981634745-pvya7e",
+                        "pin": "",
+                        "validity": "2026-06-18",
+                        "amount": 25,
+                        "currency": "USD",
+                        "country": "US",
+                        "type": "code",
+                        "currencyValue": 0.014089
+                    }
+                ]
+            }
+        }
+    }
+}

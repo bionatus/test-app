@@ -1,0 +1,25 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class RemoveConfirmedAtColumnsFromOrderDeliveriesTable extends Migration
+{
+    const TABLE_NAME = 'order_deliveries';
+
+    public function up()
+    {
+        Schema::table(self::TABLE_NAME, function(Blueprint $table) {
+            $table->dropColumn('supplier_confirmed_at', 'user_confirmed_at');
+        });
+    }
+
+    public function down()
+    {
+        Schema::table(self::TABLE_NAME, function(Blueprint $table) {
+            $table->datetime('supplier_confirmed_at')->nullable()->after('note');
+            $table->datetime('user_confirmed_at')->nullable()->after('supplier_confirmed_at');
+        });
+    }
+}

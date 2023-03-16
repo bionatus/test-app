@@ -1,0 +1,146 @@
+{
+  "version": "3.0.0",
+  "products": [
+    {
+      "title": "",
+      "data": [
+        {
+          "label": "Unit",
+          "component": "ProductItemBrand"
+        },
+        {
+          "label": "Unit Image",
+          "component": "ProductItemImage"
+        },
+        {
+          "label": "Conversion Job",
+          "component": "ProductItemStage"
+        }
+      ]
+    },
+    {
+      "title": "Unit Details",
+      "data": [
+        "System Type",
+        "Tonnage",
+        "Total Circuits",
+        "DX\/Chiller",
+        "Cooling Type",
+        "AC\/HP",
+        "SEER",
+        "EER"
+      ]
+    },
+    {
+      "title": "Refrigerant Details",
+      "data": [
+        "Refrigerant",
+        "Original Charge (oz)"
+      ]
+    },
+    {
+      "title": "Compressor Details",
+      "data": [
+        "Compressor Type",
+        "Compressor Brand",
+        "Compressor Model",
+        "Total Compressors",
+        "Compressors\/Circuit",
+        "Compressor Size(s)",
+        "RLA",
+        "LRA",
+        {
+          "label": "Compressor Notes",
+          "component": "ProductItemNotes"
+        }
+      ]
+    },
+    {
+      "title": "Oil Details",
+      "data": [
+        "Oil Type",
+        "Oil Amt (oz)",
+        {
+          "label": "Oil Notes",
+          "component": "ProductItemNotes"
+        }
+      ]
+    },
+    {
+      "title": "Metering Device Details",
+      "data": [
+        "Device Type",
+        "Devices\/Circuit",
+        "Total Devices",
+        "Device Size",
+        {
+          "label": "Metering Device Notes",
+          "component": "ProductItemNotes"
+        }
+      ]
+    },
+    {
+      "title": "Fan Details",
+      "data": [
+        "Fan Type",
+        "CFM Range",
+        {
+          "label": "Fan Notes",
+          "component": "ProductItemNotes"
+        }
+      ]
+    },
+    {
+      "title": "Electrical Details",
+      "data": [
+        "Voltage\/Phase\/Hz"
+      ]
+    },
+    {
+      "title": "Standard Controls",
+      "data": [
+        {
+          "label": "Standard Controls",
+          "component": "ProductItem",
+          "valueOnly": true
+        }
+      ]
+    },
+    {
+      "title": "Optional Controls",
+      "data": [
+        {
+          "label": "Optional Controls",
+          "component": "ProductItem",
+          "valueOnly": true
+        }
+      ]
+    },
+    {
+      "title": "Documentation",
+      "component": "ProductDocumentationList",
+      "data": [
+        {
+          "label": "Service Facts",
+          "text": "Service Facts",
+          "component": "ProductItemDocumentation"
+        },
+        {
+          "label": "Product Data",
+          "text": "Product Data",
+          "component": "ProductItemDocumentation"
+        },
+        {
+          "label": "IOM",
+          "text": "IOM",
+          "component": "ProductItemDocumentation"
+        },
+        {
+          "label": "Misc",
+          "text": "Miscellaneous",
+          "component": "ProductItemDocumentation"
+        }
+      ]
+    }
+  ]
+}
