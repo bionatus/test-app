@@ -21,6 +21,6 @@ spec:
            MYSQL_DATABASE: test
            MYSQL_HOST: 127.0.0.1
            MYSQL_PASSWORD: root
-           MYSQL_ROOT_PASSWORD: pas
+           MYSQL_ROOT_PASSWORD: pass
         ports:
         - containerPort: 80
