@@ -16,5 +16,11 @@ spec:
       containers:
       - image: mysql:8.0.26
         name: laravel-dev
+        env:
+         - name: laravel-dev
+           MYSQL_DATABASE: test
+           MYSQL_HOST: 127.0.0.1
+           MYSQL_PASSWORD: root
+           MYSQL_ROOT_PASSWORD: pas
         ports:
         - containerPort: 80
