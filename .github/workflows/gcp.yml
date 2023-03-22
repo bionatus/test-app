@@ -31,9 +31,7 @@
 
         - name: Build Docker Image
           run: |-  
-            cp .env.example .env  
-            sail down --rmi all
-            sail up         
+            cp .env.example .env                     
             cd ./vendor/laravel/sail/runtimes/8.2            
             docker build -t $IMAGE_NAME:latest .
     
