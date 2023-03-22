@@ -34,7 +34,6 @@
             cp .env vendor/laravel/sail/runtimes/8.2/.env
             cd vendor/laravel/sail/runtimes/8.2
             docker build -t $IMAGE_NAME:latest .
-          run: 
     
         - name: Automatic Tagging of Releases
           id: increment-git-tag
