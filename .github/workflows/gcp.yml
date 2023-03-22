@@ -13,15 +13,24 @@
         steps:
         - name: Checkout
           uses: actions/checkout@v2
-    
+        
+        - name: Setup PHP
+          uses: shivammathur/setup-php@master
+          with:
+            php-version: 8.2
+          extensions: mbstring, bcmath, grpc
+
+        - name: Install Composer Dependencies
+          run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+
         - uses: google-github-actions/setup-gcloud@main
           with:
             service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
             project_id: ${{ env.PROJECT_ID }}
             export_default_credentials: true
-    
+
         - name: Build Docker Image
-          run: docker build -t $IMAGE_NAME:latest .
+          run: cd vendor/laravel/sail/runtimes/8.2 && ls && docker build -t $IMAGE_NAME:latest .
     
         - name: Automatic Tagging of Releases
           id: increment-git-tag
