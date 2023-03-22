@@ -8,8 +8,8 @@
         name: Build and Push to GCP
         runs-on: ubuntu-latest
         env:
-          IMAGE_NAME: laravel
-          PROJECT_ID: david-experiment
+          IMAGE_NAME: laravel-test
+          PROJECT_ID: bluon-platform-dev
         steps:
         - name: Checkout
           uses: actions/checkout@v2
