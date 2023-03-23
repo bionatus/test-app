@@ -37,11 +37,21 @@
           id: increment-git-tag
           run: |
             bash ./scripts/git_update.sh -v major
-    
-        - name: Configure Docker Client
-          run: |-            
-            gcloud auth configure-docker us-west2-docker.pkg.dev
 
+        - name: 'Authenticate to Google Cloud'
+          uses: 'google-github-actions/auth@v0.6.0'
+          with:
+            credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+            token_format: 'access_token'
+
+        - name: 'Docker login'
+          uses: 'docker/login-action@v1'
+          with:
+            registry: 'us-west2-docker.pkg.dev'
+            username: 'oauth2accesstoken'
+            password: '${{ steps.auth.outputs.access_token }}'
+        
+        
         - name: Push Docker Image to Artifact Registry
           env:
             GIT_TAG: ${{ steps.increment-git-tag.outputs.git-tag }}
