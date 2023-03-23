@@ -14,7 +14,7 @@ spec:
         app: laravel-dev
     spec:
       containers:
-      - image: mysql:8.0.26
+      - image: us-west2-docker.pkg.dev/bluon-platform-dev/docker/laravel-test:latest
         name: laravel-dev
         ports:
         - containerPort: 80
