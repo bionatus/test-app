@@ -20,12 +20,8 @@
             credentials_json: '${{ secrets.SERVICE_ACCOUNT_KEY }}'
             token_format: 'access_token'
 
-        - name: 'Docker login'
-          uses: 'docker/login-action@v1'
-          with:
-            registry: 'us-west2-docker.pkg.dev'
-            username: 'oauth2accesstoken'
-            password: '${{ steps.auth.outputs.access_token }}'
+        - name: Docker login
+          run: gcloud auth print-access-token | docker login -u oauth2accesstoken  --password-stdin https://us-west2-docker.pkg.dev
 
 
         - name: Setup PHP
