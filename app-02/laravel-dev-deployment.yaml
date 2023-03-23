@@ -1,20 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: laravel-dev
+  name: laravel-test
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: laravel-dev
+      app: laravel-test
   template:
     metadata:
       labels:
-        app: laravel-dev
+        app: laravel-test
     spec:
       containers:
       - image: us-west2-docker.pkg.dev/bluon-platform-dev/docker/laravel-test:latest
-        name: laravel-dev
+        name: laravel-test
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
