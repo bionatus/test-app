@@ -40,6 +40,7 @@
     
         - name: Configure Docker Client
           run: |-
+            gcloud auth login
             gcloud auth configure-docker --quiet
             gcloud auth configure-docker us-west2-docker.pkg.dev --quiet
     
