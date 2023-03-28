@@ -1,0 +1,9 @@
+apiVersion: getambassador.io/v2 
+kind: Mapping 
+metadata: 
+name: laravel-test 
+namespace: test
+spec: 
+prefix: /laravel-test/ 
+rewrite: / 
+service: laravel-test:80 
