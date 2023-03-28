@@ -10,7 +10,8 @@ spec:
     - host: laravel.test   
       http:   
         paths:   
-          - path: /*                  
+          - path: /*   
+            pathType: ImplementationSpecific 
             backend:   
               service:   
                 name: laravel-test   
