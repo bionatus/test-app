@@ -7,7 +7,7 @@ metadata:
     alb.ingress.kubernetes.io/healthcheck-interval-seconds: '60'
 spec:   
   rules:   
-    - host: laravel.test   
+    - host: laravel.local   
       http:   
         paths:   
           - path: /*   
@@ -16,4 +16,4 @@ spec:
               service:   
                 name: laravel-test   
                 port:   
-                  number: 80
+                  servicePort: http
