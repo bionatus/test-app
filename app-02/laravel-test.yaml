@@ -1,17 +1,21 @@
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: ingress-test
-  namespace: test
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
-spec:
-  rules:
-  - host: laravel.local
-    http:
-      paths:
-      - backend:
-          serviceName: ingress-test
-          servicePort: https
+apiVersion: networking.k8s.io/v1
+kind: Ingress   
+metadata:   
+  name: ingress-test   
+  annotations:   
+    kubernetes.io/ingress.class: alb   
+    alb.ingress.kubernetes.io/healthcheck-interval-seconds: '60'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+    alb.ingress.kubernetes.io/healthcheck-path: /*
+spec:   
+  rules:   
+    - host: laravel.local   
+      http:   
+        paths:   
+          - path: /*   
+            pathType: ImplementationSpecific 
+            backend:   
+              service:   
+                name: laravel-test   
+                port:   
+                  name: http
