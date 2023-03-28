@@ -16,4 +16,4 @@ spec:
               service:   
                 name: laravel-test   
                 port:   
-                  servicePort: http
+                  name: http
