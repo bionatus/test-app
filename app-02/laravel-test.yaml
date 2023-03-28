@@ -5,6 +5,7 @@ metadata:
   annotations:   
     kubernetes.io/ingress.class: alb   
     alb.ingress.kubernetes.io/healthcheck-interval-seconds: '60'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/healthcheck-path: /*
 spec:   
   rules:   
