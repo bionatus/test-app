@@ -2,20 +2,18 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress   
 metadata:   
   name: ingress-test   
-  annotations:   
-    kubernetes.io/ingress.class: alb   
-    alb.ingress.kubernetes.io/healthcheck-interval-seconds: '60'
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
-    alb.ingress.kubernetes.io/healthcheck-path: /*
-spec:   
+  annotations:    
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx-test
   rules:   
     - host: laravel.local   
       http:   
         paths:   
-          - path: /*   
+          - path: /   
             pathType: Prefix
             backend:   
               service:   
                 name: laravel-test   
                 port:   
-                  name: http
+                  number: 80
