@@ -16,6 +16,19 @@ spec:
       containers:
       - image: us-west2-docker.pkg.dev/bluon-platform-dev/docker/laravel-test:1.1.0
         name: laravel-test
-        env:
-        - name: "PORT"
-          value: "80"  
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "25m"
+        readinessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 30
+          periodSeconds: 15
+          failureThreshold: 3
+        livenessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 60
+          periodSeconds: 20
+          failureThreshold: 3  
