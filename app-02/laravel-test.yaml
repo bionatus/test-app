@@ -1,18 +1,18 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-test
   annotations:
-    ingress.kubernetes.io/rewrite-target: /
+    argocd.argoproj.io/sync-wave: "3"
 spec:
   rules:
-  - http:
+    -host: todo.devnation
+      http:
       paths:
         - path: /*
-          backend:
-            serviceName: laravel-test
-            servicePort: 80
-        - path: /*
-          backend:
-            serviceName: laravel-test
-            servicePort: 80
+           pathType: Prefix
+            backend:
+              service:
+                name: laravel-test
+                port:
+                  number: 80
