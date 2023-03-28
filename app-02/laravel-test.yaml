@@ -16,3 +16,4 @@ spec:
                 name: laravel-test   
                 port:   
                   number: 80
+                servicePort: http
