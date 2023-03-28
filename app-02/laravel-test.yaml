@@ -2,11 +2,12 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-test
+  namespace: test
   annotations:
     argocd.argoproj.io/sync-wave: "3"
 spec:
   rules:
-    -host: todo.devnation
+    - host: todo.devnation
       http:
       paths:
         - path: /*
