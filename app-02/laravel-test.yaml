@@ -3,9 +3,10 @@ kind: Ingress
 metadata:   
   name: ingress-test   
   annotations:    
-    nginx.ingress.kubernetes.io/rewrite-target: /
-spec:
-  ingressClassName: nginx-test
+    kubernetes.io/ingress.global-static-ip-name: laravel-test
+  labels:
+    app: laravel  
+spec:  
   rules:   
     - host: laravel.local   
       http:   
