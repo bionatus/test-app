@@ -1,17 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress   
 metadata:   
-  name: ingress-test   
-  annotations:    
-  labels:
-    app: laravel  
+  name: ingress-test 
 spec:  
-  rules: 
-   - host: laraveltesting.com
-     http:   
+  defaultBackend:
+    service:
+      name: laravel-test
+      port:
+        number: 80
+  rules:  
+    - http:   
         paths:   
-          - path: /*   
-            pathType: ImplementationSpecific
+          - path: /   
+            pathType: Prefix
             backend:   
               service:   
                 name: laravel-test   
