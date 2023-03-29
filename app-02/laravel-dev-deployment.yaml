@@ -16,6 +16,7 @@ spec:
       containers:
       - image: us-west2-docker.pkg.dev/bluon-platform-dev/docker/laravel-test:1.1.0
         name: laravel-test
+        resources:
         livenessProbe:
             failureThreshold: 3
             httpGet:
@@ -26,7 +27,7 @@ spec:
             periodSeconds: 60
             successThreshold: 1
             timeoutSeconds: 10
-          readinessProbe:
+        readinessProbe:
             failureThreshold: 3
             httpGet:
               path: /health
