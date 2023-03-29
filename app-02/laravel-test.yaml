@@ -8,8 +8,7 @@ metadata:
     app: laravel  
 spec:  
   rules:   
-    - host: laravel.local   
-      http:   
+  - http:   
         paths:   
           - path: /   
             pathType: Prefix
