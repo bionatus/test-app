@@ -6,8 +6,9 @@ metadata:
   labels:
     app: laravel  
 spec:  
-  rules:   
-  - http:   
+  rules: 
+   - host: laraveltesting.com
+     http:   
         paths:   
           - path: /   
             pathType: Prefix
