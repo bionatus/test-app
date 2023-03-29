@@ -2,10 +2,10 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress   
 metadata:   
   name: ingress-test   
-  annotations:  
-    kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/healthcheck-path: /
-    alb.ingress.kubernetes.io/healthcheck-interval-seconds: '60'
+  annotations:
+    kubernetes.io/ingress.class: "gce"   
+    gce.ingress.kubernetes.io/healthcheck-path: /
+    gce.ingress.kubernetes.io/healthcheck-interval-seconds: '60'
     
   labels:
     app: laravel  
