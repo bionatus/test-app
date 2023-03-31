@@ -3,7 +3,7 @@ kind: Ingress
 metadata:   
   name: ingress-test 
 annotations: 
-  gcp.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+  alb.ingress.kubernetes.io/listen-ports: 'gcp'
 spec:  
   defaultBackend:
     service:
