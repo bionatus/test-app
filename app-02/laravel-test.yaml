@@ -3,7 +3,7 @@ kind: Ingress
 metadata:   
   name: ingress-test 
   annotations: 
-  kubernetes.io/ingress.allow-http: "true"
+    kubernetes.io/ingress.allow-http: "true"
 spec:  
   defaultBackend:
     service:
