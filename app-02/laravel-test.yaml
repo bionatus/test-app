@@ -2,8 +2,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress   
 metadata:   
   name: ingress-test 
-  annotations: 
-    kubernetes.io/ingress.allow-http: "true"
 spec:  
   defaultBackend:
     service:
@@ -14,7 +12,7 @@ spec:
     - http:   
         paths:   
           - path: /   
-            pathType: Prefix
+            pathType: ImplementationSpecific
             backend:   
               service:   
                 name: laravel-test   
