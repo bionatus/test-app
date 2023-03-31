@@ -15,3 +15,6 @@ spec:
       containers:
       - image: us-west2-docker.pkg.dev/bluon-platform-dev/docker/laravel-test:1.1.0
         name: laravel-test
+        env:
+        - name: "PORT"
+          value: "8080"
