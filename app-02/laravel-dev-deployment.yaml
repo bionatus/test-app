@@ -18,7 +18,7 @@ spec:
         name: laravel-test
         readinessProbe:
           httpGet:
-            path: /healthz
+            path: /
             port: 80
           periodSeconds: 1
           timeoutSeconds: 1
