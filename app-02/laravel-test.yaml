@@ -3,18 +3,13 @@ kind: Ingress
 metadata:   
   name: ingress-test 
 spec:  
-  defaultBackend:
-    service:
-      name: laravel-test
-      port:
-        number: 80
   rules:  
-    - http:   
-        paths:   
-          - path: /   
-            pathType: ImplementationSpecific
-            backend:   
-              service:   
-                name: laravel-test   
-                port:   
-                  number: 80
+  - http:   
+      paths:   
+      - path: /*   
+        pathType: ImplementationSpecific
+        backend:   
+          service:   
+            name: laravel-test   
+            port:   
+              number: 80
