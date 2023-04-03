@@ -13,7 +13,7 @@ spec:
         app: laravel-test
     spec:
       containers:
-      - image: us-west2-docker.pkg.dev/bluon-platform-dev/docker/laravel-test:1.1.0
+      - image: us-west2-docker.pkg.dev/bluon-platform-dev/docker/laravel-test:latest
         name: laravel-test
         env:
         - name: "PORT"
