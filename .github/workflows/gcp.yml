@@ -22,18 +22,7 @@
 
         - name: Docker login
           run: gcloud auth print-access-token | docker login -u oauth2accesstoken  --password-stdin https://us-west2-docker.pkg.dev
-
-
-        - name: Setup PHP
-          uses: shivammathur/setup-php@master
-          with:
-            php-version: 8.2
-            extensions: mbstring, bcmath, grpc
-
-        - name: Install Composer Dependencies
-          run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
-
-        
+                  
         - name: Build Docker Image
           run: |-                                  
             docker build -t $IMAGE_NAME:latest .
