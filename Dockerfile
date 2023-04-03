@@ -6,6 +6,8 @@ ARG NODE_VERSION=18
 ARG POSTGRES_VERSION=14
 
 WORKDIR /var/www/html
+ADD . /var/www/html
+RUN composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ=UTC
