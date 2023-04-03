@@ -17,4 +17,4 @@ spec:
         name: laravel-test
         env:
         - name: "PORT"
-          value: "80"
+          value: "8000"
