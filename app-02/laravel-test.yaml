@@ -4,7 +4,7 @@ metadata:
   name: ingress-test 
 spec:  
   rules: 
-    - host: test.bluontoolbox.com
+    - host: test.dev.bluontoolbox.com
       http:   
         paths:   
           - path: /*   
