@@ -11,6 +11,6 @@ spec:
             pathType: ImplementationSpecific
             backend:   
               service:   
-              name: laravel-test   
-              port:   
-                number: 80
+                name: laravel-test   
+                port:   
+                  number: 80
