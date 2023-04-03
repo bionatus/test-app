@@ -3,13 +3,14 @@ kind: Ingress
 metadata:   
   name: ingress-test 
 spec:  
-  rules:  
-  - http:   
-      paths:   
-      - path: /*   
-        pathType: ImplementationSpecific
-        backend:   
-          service:   
-            name: laravel-test   
-            port:   
-              number: 80
+  rules: 
+    - host: test.bluontoolbox.com
+      http:   
+        paths:   
+          - path: /*   
+            pathType: ImplementationSpecific
+            backend:   
+              service:   
+              name: laravel-test   
+              port:   
+                number: 80
