@@ -7,7 +7,6 @@ ARG POSTGRES_VERSION=14
 
 WORKDIR /var/www/html
 ADD . /var/www/html
-RUN apt-get install composer -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ=UTC
