@@ -15,6 +15,9 @@ spec:
       containers:
       - image: us-west2-docker.pkg.dev/bluon-platform-dev/docker/laravel-test:latest
         name: laravel-test
-        env:
-        - name: "PORT"
-          value: "8000"
+    readinessProbe:
+     httpGet:
+     path: "/health-check"
+     port: 8000
+     initialDelaySeconds: 10
+     timeoutSeconds: 5  
