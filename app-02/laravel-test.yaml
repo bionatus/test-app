@@ -3,8 +3,6 @@ kind: Ingress
 metadata:   
   name: ingress-test 
   annotations:
-    kubernetes.io/ingress.class: "nginx"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/rewrite-target: /
     
 spec:  
@@ -12,7 +10,7 @@ spec:
     - host: test.dev.bluontoolbox.com
       http:   
         paths:   
-          - path: /*   
+          - path: /   
             pathType: ImplementationSpecific
             backend:   
               service:   
