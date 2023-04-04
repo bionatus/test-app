@@ -17,7 +17,7 @@ spec:
         name: laravel-test
         livenessProbe:
           httpGet:
-            path: /healthz
+            path: /
             port: 8000
             scheme: HTTP
           initialDelaySeconds: 30
