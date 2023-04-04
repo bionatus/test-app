@@ -7,7 +7,9 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"   
    
-spec:  
+spec:
+  tls:
+  - secretName: bluontoolbox-com-wildcard-cert-tls
   rules: 
     - host: test.dev.bluontoolbox.com
       http:   
