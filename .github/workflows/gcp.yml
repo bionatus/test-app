@@ -24,9 +24,8 @@
           run: gcloud auth print-access-token | docker login -u oauth2accesstoken  --password-stdin https://us-west2-docker.pkg.dev
                   
         - name: Build Docker Image
-          run: |-                                  
-            docker build -t $IMAGE_NAME:latest .         
-
+          run: |-                                
+            docker-compose build
             
         - name: Push Docker Image to Artifact Registry   
           run: |-
