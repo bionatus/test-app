@@ -25,7 +25,8 @@
                   
         - name: Build Docker Image
           run: |-                                  
-            docker build -t $IMAGE_NAME:latest .            
+            docker build -t $IMAGE_NAME:latest . 
+            docker-compose up
 
             
         - name: Push Docker Image to Artifact Registry   
